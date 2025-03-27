@@ -15,31 +15,67 @@
 			}
 
 			.open-menu {
-					background-color: white;
-					border: solid 2px rgb(5, 5, 66);
-					padding: .5em;
-					border-radius: .4rem;
-					font-weight: 600;
-					color: rgb(5, 5, 66);
-				}
+				background-color: white;
+				border: solid 2px rgb(5, 5, 66);
+				padding: .5em;
+				border-radius: .4rem;
+				font-weight: 600;
+				color: rgb(5, 5, 66);
+
+			}
+
+			.sluit-button {
+				position: relative;
+				left: 2%;
+				top: 2%;
+			}
+			
 
 			li {
+				padding: .5em;
 				list-style: none;
+
 			}
 
 			a {
 				text-decoration: none;
 				color: black;
+				&:hover {
+					background-color: rgb(5, 5, 66);
+					color: white;
+					padding: .4em 2em .4em 2em;
+				}
 			}
+
+			nav {
+				position: absolute;
+				left:0;
+				right: 15em;
+				top:0;
+				bottom:0;
+				translate:-100% 0%;
+				transition:translate .3s;
+				background-color: aliceblue;
+			}
+
+
+			nav.toonMenu { /*aangemaakte class in javascript*/
+ 		   		translate: 0% 0%; /*Menu komt in beeld*/
+			}
+
+			video:target {
+  				background-color: rgb(5, 5, 66);	
+			}	
 
 			/* Hint: kijk eens naar :target
 			   https://developer.mozilla.org/en-US/docs/Web/CSS/:target */
+		
 		</style>
 		<script type="module">
 			/* Schrijf hier eventueel je client-side JavaScript */
 			let openButton = document.querySelector('header > .open-menu') //hiermee wordt de de button menu opgezocht. //In JavaScript wordt const gebruikt om een variabele te declareren die niet hernoemd of opnieuw toegewezen kan worden.
 			let NavSearch = document.querySelector('nav')
-			let sluitButton = document.querySelector('header nav .sluit-menu')  //sluitbutton in de navigatiebar wordt opgezocht
+			let sluitButton = document.querySelector('header .sluit-button')  //sluitbutton in de navigatiebar wordt opgezocht
 
 			// stap 2: laat de menu-button luisteren naar kliks en voer dan een functie uit
 			openButton.addEventListener('click', openMenu) // Zo ga je een event (actie) toevoegen. We moeten nog wel zeggen wat de click gaat doen:
@@ -69,8 +105,16 @@
 
 			
 		<nav>
+
+			<button class="sluit-button">
+				<svg viewBox="0 0 32 32" width="32" height="32">
+					<title>Sluiten</title>
+					<path d="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z"></path>
+				</svg>
+			</button>
+
 			<ul>
-				<li><a href="#p1">Jump to content</a></li>
+				<li><a href="#p2">Jump to video</a></li>
 				<li><a href="index.html">Home</a></li>
 				<li><a href="faq.html">Veelgestelde vragen</a></li>
 				<li><a href="switch.html">Switch control</a></li>
@@ -83,12 +127,7 @@
 			</ul>
 		</nav>
 
-		<button class="sluit-button">
-			<svg viewBox="0 0 32 32" width="32" height="32">
-				<title>Sluiten</title>
-				<path d="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z"></path>
-			</svg>
-		</button>
+		
 		</header>
 
 		
@@ -96,7 +135,7 @@
 			
 
 			<!-- Deze tekst kun je gebruiken, zodat de pagina wat langer wordt-->
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum eget elit eu tincidunt. Donec gravida nulla at justo sollicitudin, hendrerit faucibus diam tincidunt. Pellentesque porta neque quis nunc laoreet congue. Sed porttitor nec tellus nec semper. Cras pharetra dictum risus ut sagittis. Aliquam in iaculis arcu. Nulla sit amet diam sit amet mauris placerat laoreet eu vel turpis. Vivamus ac massa ut diam gravida elementum ut nec nulla. Integer vel felis massa. Quisque facilisis enim ornare ultricies mattis. Fusce porta rhoncus ex. Nunc viverra orci at leo fermentum convallis. Morbi sodales, lectus congue aliquam maximus, metus ipsum placerat turpis, vitae venenatis metus erat vel eros. Vestibulum lobortis accumsan elit nec maximus. Vivamus mollis ullamcorper felis, id aliquet tellus volutpat at.</p>
+			<p id="p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum eget elit eu tincidunt. Donec gravida nulla at justo sollicitudin, hendrerit faucibus diam tincidunt. Pellentesque porta neque quis nunc laoreet congue. Sed porttitor nec tellus nec semper. Cras pharetra dictum risus ut sagittis. Aliquam in iaculis arcu. Nulla sit amet diam sit amet mauris placerat laoreet eu vel turpis. Vivamus ac massa ut diam gravida elementum ut nec nulla. Integer vel felis massa. Quisque facilisis enim ornare ultricies mattis. Fusce porta rhoncus ex. Nunc viverra orci at leo fermentum convallis. Morbi sodales, lectus congue aliquam maximus, metus ipsum placerat turpis, vitae venenatis metus erat vel eros. Vestibulum lobortis accumsan elit nec maximus. Vivamus mollis ullamcorper felis, id aliquet tellus volutpat at.</p>
 			<p>In ante sem, faucibus sit amet nisl ut, efficitur mattis augue. Aenean fringilla lorem id metus ultrices bibendum. Quisque eleifend enim purus, eu bibendum mauris blandit nec. Donec vitae purus sed eros ullamcorper vehicula sit amet eu massa. Vestibulum eget mi vel tellus pharetra convallis quis quis nunc. Maecenas bibendum neque sit amet neque ultrices sollicitudin. Donec viverra arcu nec urna accumsan pharetra. Donec pharetra lacinia elementum.</p>
 			<p>Aliquam auctor diam ut ipsum mattis semper. Praesent auctor quam ut libero aliquet, at gravida nunc aliquam. Duis mollis faucibus nisi at fringilla. Vestibulum at vulputate tortor, eget consequat libero. Praesent non ante libero. Praesent imperdiet neque at lacus mattis, at tincidunt odio ullamcorper. In massa metus, iaculis id vulputate vel, aliquam eu sem. Nulla varius lorem ut justo consectetur consectetur. Nulla viverra, metus in dapibus facilisis, magna sapien lobortis urna, vel mattis sapien velit at nisi. Nullam semper est lorem, id lobortis est blandit gravida. Nulla purus orci, aliquet ac purus at, eleifend ultricies dolor. Vivamus lobortis lectus quis augue molestie congue. Morbi vel libero ac ex sagittis euismod vitae eu dolor. Nunc sed libero enim. Duis at lacus et est fermentum ullamcorper et non eros. Ut semper auctor commodo.</p>
 			<p>Phasellus facilisis, lorem a venenatis ultrices, turpis turpis maximus est, quis lacinia risus erat quis mi. In ornare consequat malesuada. In hac habitasse platea dictumst. Maecenas egestas diam quis fringilla laoreet. Ut at tortor blandit, ultricies nisi et, pretium nisi. Praesent ac est vitae leo gravida sodales quis quis libero. Nullam nec ligula ultricies, euismod ipsum sed, iaculis urna. Sed vel eros non ex dapibus consequat sed sed diam. Fusce sem libero, fermentum vel sapien ac, dictum fringilla enim.</p>
@@ -114,7 +153,7 @@
 
 			<details open>
 				<summary>Demo video</summary>
-				<video src="assets/menu.mp4" width="773" height="863" controls muted autoplay loop>
+				<video id="p2" src="assets/menu.mp4" width="773" height="863" controls muted autoplay loop>
 					<a href="assets/menu.mp4">assets/menu.mp4</a>
 				</video>
 			</details>
