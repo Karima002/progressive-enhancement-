@@ -59,8 +59,8 @@
 			}
 
 
-			nav.toonMenu { /*aangemaakte class in javascript*/
- 		   		translate: 0% 0%; /*Menu komt in beeld*/
+			nav.toonMenu { 
+ 		   		translate: 0% 0%; 
 			}
 
 			video:target {
@@ -71,23 +71,21 @@
 			   https://developer.mozilla.org/en-US/docs/Web/CSS/:target */
 		
 		</style>
+
 		<script type="module">
 			/* Schrijf hier eventueel je client-side JavaScript */
-			let openButton = document.querySelector('header > .open-menu') //hiermee wordt de de button menu opgezocht. //In JavaScript wordt const gebruikt om een variabele te declareren die niet hernoemd of opnieuw toegewezen kan worden.
+			let openButton = document.querySelector('header > .open-menu') 
 			let NavSearch = document.querySelector('nav')
-			let sluitButton = document.querySelector('header .sluit-button')  //sluitbutton in de navigatiebar wordt opgezocht
+			let sluitButton = document.querySelector('header .sluit-button') 
 
-			// stap 2: laat de menu-button luisteren naar kliks en voer dan een functie uit
-			openButton.addEventListener('click', openMenu) // Zo ga je een event (actie) toevoegen. We moeten nog wel zeggen wat de click gaat doen:
+			openButton.addEventListener('click', openMenu) 
 
-			// stap 3: voeg in de functie een class toe aan de nav
 			function openMenu (){
 				NavSearch.classList.toggle('toonMenu')
 			}
 
 			sluitButton.addEventListener('click', sluitMenu)
 
-			// stap 4 - in de functie verwijder de class van de nav
 			function sluitMenu() {
 				NavSearch.classList.remove('toonMenu')
 }
@@ -95,6 +93,7 @@
 			/* Hint: dit component kan volledig met CSS, maar met JS kun je 'm enhancen */
 		</script>
 	</head>
+
 	<body>
 
 		<header>
@@ -157,13 +156,8 @@
 					<a href="assets/menu.mp4">assets/menu.mp4</a>
 				</video>
 			</details>
-		</main>
+		</main>		
 
-		<!-- Dit is het menu-->
 		
-
-		<!-- Dit is eventueel het 'Sluiten' icoon
-		
-		-->
 	</body>
 </html>
