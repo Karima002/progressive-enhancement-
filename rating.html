@@ -16,6 +16,35 @@
 
 			/* Hint: met Grid Layout kun je elementen over elkaar heen leggen */
 
+			
+		input[type="radio"] {
+    		display: none;
+  		}
+
+		form.rating-stars {
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: left;
+  }
+  		.star-label {
+			width: 3em;
+			height: 3em;
+			background-image: url('../assets/star-outline.svg');
+			background-size: cover;
+			cursor: pointer;
+  		}
+
+		/* Alle <label>-elementen die na het geselecteerde <input> komen, moeten een gevulde ster krijgen. wordt aangegeven met ~*/
+		input[type="radio"]:checked ~ label {
+ 			background-image: url('../assets/star-filled.svg');
+		}
+
+		/* Hover effect voor alle sterren links van de hover */
+		.star-label:hover,
+		.star-label:hover ~ label {
+			background-image: url('../assets/star-filled.svg');
+		}
+
 		 
 		</style>
 	</head>
